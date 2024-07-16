@@ -1,10 +1,15 @@
 "use client";
 
 import { Flex, TextField, Button, Text } from "@radix-ui/themes";
-import { EnvelopeClosedIcon, LockClosedIcon, PersonIcon } from "@radix-ui/react-icons";
+import {
+  EnvelopeClosedIcon,
+  LockClosedIcon,
+  PersonIcon,
+} from "@radix-ui/react-icons";
 
 import { useForm, Controller } from "react-hook-form";
 
+import axios from "axios";
 
 function SignupForm() {
   const {
@@ -19,17 +24,14 @@ function SignupForm() {
     },
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit(async (data) => {
+    const res = await axios.post("/api/auth/register", data);
+    console.log(res);
   });
 
   return (
     <form onSubmit={onSubmit}>
-
-      
       <Flex direction="column" gap="2">
-
-
         {/* INPUT PARA INGRESAR EL NOMBRE DE USUARIO */}
         <label htmlFor="name">Nombre de usuario</label>
 
@@ -44,7 +46,8 @@ function SignupForm() {
             },
             pattern: {
               value: /^[a-zA-Z0-9_-]+$/,
-              message: "Solo se permiten letras, números, guiones altos y bajos. No se permiten espacios ni caracteres especiales.",
+              message:
+                "Solo se permiten letras, números, guiones altos y bajos. No se permiten espacios ni caracteres especiales.",
             },
           }}
           render={({ field }) => {
@@ -72,7 +75,6 @@ function SignupForm() {
         )}
 
         {/* ///////////////////////////// */}
-
 
         {/* INPUT PARA INGRESAR EL MAIL */}
         <label htmlFor="email">Email</label>
@@ -113,9 +115,6 @@ function SignupForm() {
 
         {/* ///////////////////////////// */}
 
-
-
-
         {/* INPUT PARA INGRESAR EL PASSWORD */}
         <label htmlFor="password">Contraseña</label>
 
@@ -133,8 +132,10 @@ function SignupForm() {
               value: 6,
             },
             pattern: {
-              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{6,}$/,
-              message: "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial",
+              value:
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{6,}$/,
+              message:
+                "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial",
             },
           }}
           render={({ field }) => {
@@ -164,7 +165,6 @@ function SignupForm() {
         <Button type="submit" mt="4">
           Ingresar
         </Button>
-        
       </Flex>
     </form>
   );
