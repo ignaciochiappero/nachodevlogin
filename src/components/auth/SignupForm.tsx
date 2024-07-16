@@ -163,7 +163,7 @@ function SignupForm() {
         {/* ///////////////////////////// */}
 
         <Button type="submit" mt="4">
-          Ingresar
+          Registrarse
         </Button>
       </Flex>
     </form>
