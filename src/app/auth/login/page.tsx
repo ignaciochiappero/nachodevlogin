@@ -1,6 +1,6 @@
 import { Container, Card, Heading, Flex, Text, Link } from "@radix-ui/themes";
 import SigninForm from "@/components/auth/SigninForm";
-import NavLink from "next/link"; // Es el link clásico de next pero renombrado para que no entren en conflicto uno con otro
+import NextLink from "next/link"; // Es el link clásico de next pero renombrado para que no entren en conflicto uno con otro
 
 function LoginPage() {
   return (
@@ -24,9 +24,9 @@ function LoginPage() {
 
               {/* Ponemos este Link de Radix por los estilos, pero usamos el de next realmente por la velocidad*/}
               <Link asChild> 
-                <NavLink href="/auth/register" passHref>
+                <NextLink href="/auth/register" passHref>
                   Registrate!
-                </NavLink>
+                </NextLink>
               </Link>
             </Flex>
 
