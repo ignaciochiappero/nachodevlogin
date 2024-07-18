@@ -17,4 +17,18 @@ model User {
   password String
   createAt DateTime @default(now()) 
   updateAt DateTime @updatedAt
+
+  projects Project[] //esto se conecta con el model de abajo, está anidado
+}
+
+model Project {
+  id Int @id @default(autoincrement())
+  title String 
+  description String
+
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+
+  createAt DateTime @default(now()) 
+  updateAt DateTime @updatedAt
 }
