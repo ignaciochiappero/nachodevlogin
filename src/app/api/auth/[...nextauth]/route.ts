@@ -11,7 +11,7 @@ export const authOptions: AuthOptions = {
         email: {
           label: "Email",
           type: "email",
-          placeholder: "usuario@dominio.com",
+          placeholder: "user@something.com",
         },
         password: { label: "Password", type: "password" },
       },
@@ -24,14 +24,14 @@ export const authOptions: AuthOptions = {
           },
         });
 
-        if (!userFound) throw new Error("Credenciales invalidas");
+        if (!userFound) throw new Error("Invalid credentials");
 
         const validPassword = await bcrypt.compare(
           password,
           userFound.password
         );
 
-        if (!validPassword) throw new Error("Credenciales invalidas");
+        if (!validPassword) throw new Error("Invalid credentials");
 
         return {
           id: userFound.id + "",
@@ -41,7 +41,6 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
-
   callbacks: {
     async jwt({ token, user, account, profile }) {
       if (user) {
@@ -50,9 +49,7 @@ export const authOptions: AuthOptions = {
 
       return token;
     },
-
     async session({ session, user, token }) {
-
       if (token) {
         session.user.id = token.sub as string;
       }
@@ -60,8 +57,6 @@ export const authOptions: AuthOptions = {
       return session;
     },
   },
-
-  //Acá conectamos nuestras páginas con las predeterminadas de auth para que Auth use las plantillas que nosotros armamos y no las que él nos ofrece
   pages: {
     signIn: "/auth/login",
   },

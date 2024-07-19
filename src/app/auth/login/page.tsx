@@ -1,41 +1,30 @@
 import { Container, Card, Heading, Flex, Text, Link } from "@radix-ui/themes";
 import SigninForm from "@/components/auth/SigninForm";
-import NextLink from "next/link"; // Es el link clásico de next pero renombrado para que no entren en conflicto uno con otro
+import NavLink from "next/link";
 
 function LoginPage() {
   return (
     <>
-      <Container size="1" height="100%" className="p-3 md:p-0 ">
-        <Flex className="h-screen w-full items-center">
+      <Container size="1" height="100%" className="p-3 md:p-0">
+        <Flex className="h-[calc(100vh-10rem)] w-full items-center">
           <Card className="w-full p-7">
+            <Heading>Sign In</Heading>
 
-            <Heading>Ingresar</Heading>
-            <SigninForm/> {/* Form de login */}
-            
-            
+            <SigninForm />
 
-
-            {/* No tienes una cuenta? */}
             <Flex justify="between" my="4">
-              <Text>
-                No tenés una cuenta? 
-              </Text>
+              <Text>No tenés una cuenta?</Text>
 
-
-              {/* Ponemos este Link de Radix por los estilos, pero usamos el de next realmente por la velocidad*/}
-              <Link asChild> 
-                <NextLink href="/auth/register" passHref>
+              <Link asChild>
+                <NavLink href="/auth/register" passHref>
                   Registrate!
-                </NextLink>
+                </NavLink>
               </Link>
             </Flex>
-
           </Card>
-
         </Flex>
       </Container>
     </>
   );
 }
-
 export default LoginPage;

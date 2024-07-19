@@ -1,4 +1,2 @@
-import NewPage from "../new/page";
-
-
-export default NewPage;
+import NewPage from '../new/page'
+export default NewPage

@@ -9,7 +9,7 @@ function HeaderDashboard() {
 
   return (
     <div className="flex justify-between items-center mb-4">
-      <Heading>Tasks</Heading>
+      <Heading>Proyectos</Heading>
       <Button onClick={() => router.push("/dashboard/projects/new")}>
         Agregar proyecto +
       </Button>
