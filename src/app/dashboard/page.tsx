@@ -21,12 +21,11 @@ async function DashboardPage() {
   const projects = await loadProjects(parseInt(session?.user.id as string));
 
 
-
   return (
-    <Container className="mt-10 px-10 md:px-0">
+    <Container className="mt-10 px-10 md:px-0 flex items-center justify-center p-5 flex-grow ">
       <HeaderDashboard />
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-4 ">
         {projects.map((project) => (
           <ProjectCard project={project} key={project.id} />
         ))}

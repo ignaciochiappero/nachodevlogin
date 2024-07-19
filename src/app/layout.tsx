@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import ContextProvider from "@/context/GlobalContext";
 //Importación de componentes Radix
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-import ContextProvider from "@/context/GlobalContext";
 
 
 
@@ -30,13 +30,17 @@ export default function RootLayout({
       <body className={inter.className}>
         <ContextProvider>
           <Theme appearance="dark">
-            
-            <Navbar/>
-            {children}
-            
-            </Theme>
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <div className="flex-grow">
+                {children}
+              </div>
+              <Footer />
+            </div>
+          </Theme>
         </ContextProvider>
       </body>
     </html>
   );
+  
 }
