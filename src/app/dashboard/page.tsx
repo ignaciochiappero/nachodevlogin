@@ -2,7 +2,7 @@ import HeaderDashboard from "@/components/dashboard/HeaderDashboard";
 import { Container } from "@radix-ui/themes";
 import prisma from "@/libs/prisma";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/libs/authOptions";
 
 import ProjectCard from "@/components/projects/ProjectCard";
 
