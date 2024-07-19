@@ -21,7 +21,7 @@ function Navbar() {
       <Container>
         <Flex justify="between" align="center">
           <NextLink href="/">
-            <Heading>RadixNext</Heading>
+            <Heading>Nacho <span className="text-orange-500">Dev</span></Heading>
           </NextLink>
 
           <ul className="flex gap-x-2 items-center">

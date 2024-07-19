@@ -25,12 +25,9 @@ async function HomePage() {
   return (
     <Container className="px-5 md:px-0">
       <header className="my-4 bg-slate-900 p-10 rounded-md">
-        <h1 className="text-7xl my-10">NextAuth Radix</h1>
+        <h1 className="text-7xl my-10">Bienvenid@ a tu gestor de proyectos!</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia,
-          ratione! Cupiditate sequi minima quibusdam, provident atque natus sit
-          maxime necessitatibus blanditiis, sed voluptas! Placeat a, repellat
-          sunt itaque eveniet adipisci.
+          Esta es una app Full Stack desarrollada por Nacho Dev, podés registrarte y guardar, editar y eliminar tus propios proyectos. Esta app fue construida con tecnologías como NextJS, NodeJS, TailwindCSS, Typescript, React, Radix UI, NextAuth, Prisma y PostgreSQL.
         </p>
 
         <div className="mt-5">
