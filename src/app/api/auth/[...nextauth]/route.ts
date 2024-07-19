@@ -4,6 +4,8 @@ import prisma from "@/libs/prisma";
 import bcrypt from "bcrypt";
 
 export const authOptions: AuthOptions = {
+
+
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -31,6 +33,7 @@ export const authOptions: AuthOptions = {
           userFound.password
         );
 
+
         if (!validPassword) throw new Error("Invalid credentials");
 
         return {
@@ -42,14 +45,14 @@ export const authOptions: AuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account, profile }) {
+    async jwt({ token, user}) {
       if (user) {
         token.id = user.id;
       }
 
       return token;
     },
-    async session({ session, user, token }) {
+    async session({ session, token }) {
       if (token) {
         session.user.id = token.sub as string;
       }
@@ -57,9 +60,13 @@ export const authOptions: AuthOptions = {
       return session;
     },
   },
+
   pages: {
     signIn: "/auth/login",
   },
+
+
+
 };
 
 const handler = NextAuth(authOptions);
