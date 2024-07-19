@@ -17,6 +17,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "App de Proyectos | Nacho Dev",
   description: "Pagina hecha por Nacho Dev",
+  icons: "favicon.ico"
 };
 
 export default function RootLayout({
