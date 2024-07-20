@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ContextProvider>
           <Theme appearance="dark">
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col min-h-screen ">
               <Navbar />
               <div className="flex-grow">
                 {children}

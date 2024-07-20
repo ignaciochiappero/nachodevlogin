@@ -10,6 +10,7 @@ import {
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import NextLink from "next/link";
 import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
 
 function Navbar() {
   const { data: session, status } = useSession();
@@ -17,11 +18,21 @@ function Navbar() {
   if (status === "loading") return null;
 
   return (
-    <nav className="px-10 md:px-0 bg-zinc-950 py-4">
+    <nav className="px-10  bg-zinc-950 py-4 max-sm:px-0 md:px-0 ">
       <Container>
-        <Flex justify="between" align="center">
-          <NextLink href="/">
-            <Heading>Nacho <span className="text-orange-500">Dev</span></Heading>
+        <Flex justify="between" align="center" className="mx-4">
+          <NextLink href="/" className="flex gap-1 items-center">
+            <div>
+              <Image
+                src="/Logo2.png"
+                width="25"
+                height="25" 
+                alt={""}              
+              />
+            </div>
+            <Heading>              
+              Nacho <span className="text-orange-500">Dev</span></Heading>
+
           </NextLink>
 
           <ul className="flex gap-x-2 items-center">
@@ -49,7 +60,7 @@ function Navbar() {
                 <li>
                   <Link asChild>
                     <NextLink href="/dashboard" passHref>
-                      Panel
+                      Proyectos
                     </NextLink>
                   </Link>
                 </li>
