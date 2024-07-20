@@ -21,8 +21,8 @@ function Navbar() {
     <nav className="px-10  bg-zinc-950 py-4 max-sm:px-0 md:px-0 ">
       <Container>
         <Flex justify="between" align="center" className="mx-4">
-          <NextLink href="/" className="flex gap-1 items-center">
-            <div>
+          <NextLink href="/" className="flex gap-1 items-center ">
+            <div className="max-sm:h-5 max-sm:w-5 ">
               <Image
                 src="/Logo2.png"
                 width="25"
@@ -30,8 +30,10 @@ function Navbar() {
                 alt={""}              
               />
             </div>
-            <Heading>              
-              Nacho <span className="text-orange-500">Dev</span></Heading>
+            <Heading>
+              <h1 className="text-1xl max-sm:text-lg">Nacho <span className="text-orange-500">Dev</span></h1>              
+              
+            </Heading>
 
           </NextLink>
 
