@@ -6,8 +6,8 @@ import {redirect} from "next/navigation";
 import { authOptions } from "@/libs/authOptions";
 
 export const metadata: Metadata = {
-  title: "Home Project | Nacho Dev",
-  description: "Home page made by Nacho Dev",
+  title: "CRUD Project | Nacho Dev",
+  description: "Page made by Nacho Dev",
 };
 
 
